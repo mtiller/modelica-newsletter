@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type"
+          content="text/html;charset=utf-8" />
+
+    <title>
+        Modelica Newsletter {{issue}}
+    </title>
+
+
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/base.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/public.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/columns.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/authoring.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/portlets.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/deprecated.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/generated.css); --></style>
+
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/member.css); --></style>
+
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/deprecated.css); --></style>
+                    
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/generated.css); --></style>
+
+    <style type="text/css" media="screen"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/member.css); --></style>
+                
+    <link rel="alternate stylesheet"
+                          type="text/css" media="screen"
+                          href="http://www.modelica.org/portal_css/Plone%20Default/textSmall.css"
+                          title="Small Text" />
+                
+    <link rel="alternate stylesheet"
+                          type="text/css" media="screen"
+                          href="http://www.modelica.org/portal_css/Plone%20Default/textLarge.css"
+                          title="Large Text" />
+                    
+    <style type="text/css" media="all"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/contentpanels.css); --></style>
+                    
+    <style type="text/css" media="all"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/contentpanelsCustom.css); --></style>
+                    
+    <style type="text/css"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/kupustyles.css); --></style>
+                    
+    <style type="text/css"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/kupuplone.css); --></style>
+                    
+    <style type="text/css"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/kupudrawerstyles.css); --></style>
+                    
+    <style type="text/css" media="all"><!-- @import url(http://www.modelica.org/portal_css/Plone%20Default/ploneCustom.css); --></style>
+                    
+</head>
+<body>                    
+<div class="image-right">
+<h4>&nbsp;Table of Contents</h4>
+
+<ul>
+{% for sec in secs %}
+<li><a href="#{{issue.title|slugify}}"><i>{{issue.title}}</i></a>&nbsp;</li>
+<li><i>{{sec.obj.title}}</i></li>
+<ul>
+  {% for item in sec.items %}
+  <li><a href="#{{item.title|slugify}}">{{item.title}}</a>&nbsp;</li>
+  {% endfor %}
+</ul>
+{% endfor %}
+</ul>
+
+</div>
+
+<div>
+
+<h2><a name="{{issue.title|slugify}}">{{issue.title}}</a></h2>
+<br> &nbsp; <br>
+
+{{issue.body|safe}}
+
+<p>
+Best wishes from the Board of the Modelica Association:
+</p>
+
+<blockquote>
+<p>
+Martin Otter, Chairman (DLR Germany)<br>
+Peter Fritzson, Vice-Chairman (Linköping University, Sweden)<br>
+Michael Tiller, Secretary (Emmeskay, U.S.A.)<br>
+Hilding Elmqvist, Treasurer (Dynasim AB, Sweden)
+</p></blockquote>
+<p></p>
+
+<br><hr><br>
+
+{% for sec in secs %}
+<br>
+<h1>{{sec.obj.title}}</h1>
+<br>
+
+  {% for item in sec.items %}
+
+    <h2><a name="{{item.tag|slugify}}">{{item.title}}</a></h2>
+    <br> &nbsp; <br>
+    <img class="image-right" src="{{item.image.url}}" alt="{{item.title}}" width="40%">
+    {{item.body|safe}}
+
+  <p><i>
+      This article is provided by {{item.author}} ({{item.organization}}).
+  </i></p>
+
+  {% endfor %}
+
+{% endfor %}
+
+</div>
+
+<br>
+
+{{issue.footer|safe}}
+
+</body>
+</html>
