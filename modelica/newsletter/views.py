@@ -11,7 +11,7 @@ def render(request, id):
     secs = []
     for obj in secobjs:
         secs.append({'obj': obj, 'items': Item.objects.filter(section=obj)})
-    t = loader.get_template('templates/newsletter/render.html')
+    t = loader.get_template('render.html')
     c = Context({'issue': newsletter, 'secs': secs})
     return HttpResponse(t.render(c))
 
