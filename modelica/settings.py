@@ -65,12 +65,20 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'modelica.urls'
 
+# setting paths relative to project path:
+import os
+PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
+
 TEMPLATE_DIRS = (
-    "/home/mtiller/Source/Newsletter/modelica",
+    os.path.join(PROJECT_PATH, ""),
+)
+
+#TEMPLATE_DIRS = (
+#    "/home/mtiller/Source/Newsletter/modelica",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
+#)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
