@@ -56,9 +56,7 @@ SECRET_KEY = '2zcsf((t!x(ov*kig#)+l2uhwi3g69^l7n)u4ywli1=c9a+x7i'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-#    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    'django.template.loaders.filesystem.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,17 +67,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'modelica.urls'
 
-
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, ""),
+    os.path.join(PROJECT_PATH, "newsletter", "templates"),
 )
-
-#TEMPLATE_DIRS = (
-#    "/home/mtiller/Source/Newsletter/modelica",
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-#)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
