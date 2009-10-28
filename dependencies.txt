@@ -1,0 +1,2 @@
+python-django
+python-django-south (http://south.aeracode.org/)
