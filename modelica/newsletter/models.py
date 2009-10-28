@@ -11,15 +11,15 @@ class Newsletter(models.Model):
     title = models.CharField(max_length=100,blank=True)
     body = models.XMLField(blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return "%d-%d (%s)" % (self.year, self.number, self.month)
 
 class Section(models.Model):
     title = models.CharField(max_length=100)
     issue = models.ForeignKey(Newsletter)
     weight = models.IntegerField()
-    def __str__(self):
-        return "%s [%s]" % (self.title, str(self.issue))
+    def __unicode__(self):
+        return "%s [%s]" % (self.title, unicode(self.issue))
 
 # Create your models here.
 class Item(models.Model):
@@ -31,5 +31,5 @@ class Item(models.Model):
     title = models.CharField(max_length=100)
     body = models.XMLField()
     section = models.ForeignKey(Section)
-    def __str__(self):
-        return "%s %s" % (self.author, str(self.section))
+    def __unicode__(self):
+        return "%s %s" % (self.author, unicode(self.section))
