@@ -39,7 +39,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(PROJECT_PATH, "images")
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
 
 STATIC_DOC_ROOT = os.path.join(PROJECT_PATH, "images")
 

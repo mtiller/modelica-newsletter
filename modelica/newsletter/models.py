@@ -32,4 +32,4 @@ class Item(models.Model):
     body = models.XMLField()
     section = models.ForeignKey(Section)
     def __unicode__(self):
-        return "%s %s" % (self.author, unicode(self.section))
+        return "%s: '%s' %s" % (self.author, unicode(self.title), unicode(self.section))
