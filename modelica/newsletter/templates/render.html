@@ -62,12 +62,12 @@
 <h4>&nbsp;Table of Contents</h4>
 
 <ul>
-<li><a href="#{{issue.title|slugify}}"><i>{{issue.title}}</i></a>&nbsp;</li>
+<li><a href="#letter"><i>{{issue.title}}</i></a>&nbsp;</li>
 {% for sec in secs %}
 <li><i>{{sec.obj.title}}</i></li>
 <ul>
   {% for item in sec.items %}
-  <li><a href="#{{item.title|slugify}}">{{item.title}}</a>&nbsp;</li>
+  <li><a href="#item{{item.id}}">{{item.title}}</a>&nbsp;</li>
   {% endfor %}
 </ul>
 {% endfor %}
@@ -77,7 +77,7 @@
 
 <div>
 
-<h2><a name="{{issue.title|slugify}}">{{issue.title}}</a></h2>
+<h2><a name="letter">{{issue.title}}</a></h2>
 <p> &nbsp; </p>
 
 {{issue.body|safe}}
@@ -104,7 +104,7 @@ Hilding Elmqvist, Treasurer (Dynasim AB, Sweden)
 
   {% for item in sec.items %}
 
-    <h2><a name="{{item.tag|slugify}}">{{item.title}}</a></h2>
+    <h2><a name="item{{item.id}}">{{item.title}}</a></h2>
     <br> &nbsp; <br>
     {% if item.image %}
 	<img class="image-right" src="{{item.image.url}}" alt="{{item.title}}">
