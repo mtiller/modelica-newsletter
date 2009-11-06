@@ -8,6 +8,8 @@ class Newsletter(models.Model):
 
     author = models.CharField(max_length=200,blank=True)
     author_email = models.EmailField(blank=True)
+    # author = models.ForeignKey('auth.User', verbose_name="Newsletter Author",
+    #                            blank=True)
     title = models.CharField(max_length=100,blank=True)
     body = models.XMLField(blank=True)
 
@@ -25,6 +27,8 @@ class Section(models.Model):
 class Item(models.Model):
     author = models.CharField(max_length=200)
     author_email = models.EmailField(blank=True)
+    # author = models.ForeignKey('auth.User', verbose_name="Item Author",
+    #                            blank=True)
     image = models.ImageField(upload_to="images",blank=True)
     organization = models.CharField(max_length=200)
     org_url = models.URLField(blank=True)
