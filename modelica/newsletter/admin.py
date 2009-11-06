@@ -27,10 +27,10 @@ class ItemAdmin(admin.ModelAdmin):
         return False
 
 class SectionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'issue', 'weight')
+    list_display = ('title', 'weight')
     search_fields = ('title',)
-    list_filter = ('issue',)
     ordering = ('weight',)
+    list_filter = ('issue',)
 
 class NewsletterAdmin(admin.ModelAdmin):
     list_display = ('title', 'month', 'year')
