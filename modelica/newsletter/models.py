@@ -33,4 +33,4 @@ class Item(models.Model):
     section = models.ForeignKey(Section)
     weight = models.IntegerField()
     def __unicode__(self):
-        return "%s: '%s' %s" % ('author', unicode(self.title), unicode(self.section))
+        return "%s: '%s' %s" % (unicode(self.author), unicode(self.title), unicode(self.section))
