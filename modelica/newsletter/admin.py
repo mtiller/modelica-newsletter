@@ -2,8 +2,8 @@ from modelica.newsletter.models import Newsletter, Item, Section
 from django.contrib import admin
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'weight')
-    search_fields = ('title', 'author', 'organization', 'body')
+    list_display = ('title', 'weight')
+    search_fields = ('title', 'organization', 'body')
     list_filter = ('section',)
     ordering = ('weight',)
 
