@@ -6,10 +6,8 @@ class Newsletter(models.Model):
     number = models.IntegerField()
     footer = models.XMLField(null=True,blank=True)
 
-    author = models.CharField(max_length=200,blank=True)
-    author_email = models.EmailField(blank=True)
-    # author = models.ForeignKey('auth.User', verbose_name="Newsletter Author",
-    #                            blank=True)
+    author = models.ForeignKey('auth.User', verbose_name="Newsletter Author",
+                               blank=True)
     title = models.CharField(max_length=100,blank=True)
     body = models.XMLField(blank=True)
 
@@ -25,10 +23,8 @@ class Section(models.Model):
 
 # Create your models here.
 class Item(models.Model):
-    author = models.CharField(max_length=200)
-    author_email = models.EmailField(blank=True)
-    # author = models.ForeignKey('auth.User', verbose_name="Item Author",
-    #                            blank=True)
+    author = models.ForeignKey('auth.User', verbose_name="Item Author",
+                               blank=True)
     image = models.ImageField(upload_to="images",blank=True)
     organization = models.CharField(max_length=200)
     org_url = models.URLField(blank=True)
@@ -37,4 +33,4 @@ class Item(models.Model):
     section = models.ForeignKey(Section)
     weight = models.IntegerField()
     def __unicode__(self):
-        return "%s: '%s' %s" % (self.author, unicode(self.title), unicode(self.section))
+        return "%s: '%s' %s" % ('author', unicode(self.title), unicode(self.section))
