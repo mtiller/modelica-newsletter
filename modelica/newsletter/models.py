@@ -31,5 +31,6 @@ class Item(models.Model):
     title = models.CharField(max_length=100)
     body = models.XMLField()
     section = models.ForeignKey(Section)
+    weight = models.IntegerField()
     def __unicode__(self):
         return "%s: '%s' %s" % (self.author, unicode(self.title), unicode(self.section))
