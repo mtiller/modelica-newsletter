@@ -98,6 +98,7 @@ Hilding Elmqvist, Treasurer (Dynasim AB, Sweden)
 <br><hr><br>
 
 {% for sec in secs %}
+<div>
 <br>
 <h1>{{sec.obj.title}}</h1>
 <br>
@@ -114,6 +115,8 @@ Hilding Elmqvist, Treasurer (Dynasim AB, Sweden)
   <p><i>
       This article is provided by {{item.author}} ({{item.organization}}).
   </i></p>
+  <div style="clear:both;"></div>
+</div>
 
   {% endfor %}
 
