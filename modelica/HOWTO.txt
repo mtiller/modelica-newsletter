@@ -1,0 +1,17 @@
+== How to do migrations: ==
+
+First do "./manage.py startmigration newsletter <some_name> --auto"
+
+This will determine the changes and record them.
+
+Then do "./manage.py syncdb" (not sure if this is necessary)
+
+and then do "./manage.py migrate"
+
+If blank/null is not allowed and no default is given, you'll have problems.
+You may have to go into the migrations file (newsletter/migrations) and
+change the db alter commands to include default values (at least for the
+initial migration?).
+
+If you run into a case where it cannot delete a column, use sqlitebrowser to
+do it.

@@ -113,7 +113,17 @@ Hilding Elmqvist, Treasurer (Dynasim AB, Sweden)
     {{item.body|safe}}
 
   <p><i>
-      This article is provided by {{item.author.first_name}} {{item.author.last_name}} ({{item.organization}}).
+      This article is provided by
+      {{item.author.first_name}} {{item.author.last_name}}
+        {% if item.author.get_profile.organization %}
+          ({{item.author.get_profile.organization}})
+        {% endif %}
+      {% for con in item.contributors.all %}
+        and {{con.first_name}} {{con.last_name}}
+        {% if con.get_profile.organization %}
+          ({{con.get_profile.organization}})
+        {% endif %}
+      {% endfor %}.
   </i></p>
   <div style="clear:both;"></div>
 </div>

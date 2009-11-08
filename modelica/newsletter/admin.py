@@ -1,4 +1,4 @@
-from modelica.newsletter.models import Newsletter, Item, Section
+from modelica.newsletter.models import Newsletter, Item, Section, UserProfile
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
 
@@ -7,6 +7,7 @@ class ItemAdmin(admin.ModelAdmin):
     search_fields = ('title', 'organization', 'body')
     list_filter = ('section','author')
     ordering = ('weight',)
+    filter_horizontal = ('contributors',)
     # Override who is allowed to change things
     def has_change_permission(self, request, obj=None):
         # If we aren't concerned with a particular item, say yes
@@ -38,6 +39,10 @@ class NewsletterAdmin(admin.ModelAdmin):
     list_filter = ('year',)
     ordering = ('month', 'year')
 
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'organization')
+
 admin.site.register(Newsletter, NewsletterAdmin)
 admin.site.register(Item, ItemAdmin)
 admin.site.register(Section, SectionAdmin)
+admin.site.register(UserProfile, UserProfileAdmin)
