@@ -20,6 +20,7 @@ urlpatterns = patterns('',
         {'document_root': settings.STATIC_DOC_ROOT}),
     (r'^newsletter/$', 'modelica.newsletter.views.index'),
     (r'^newsletter/(?P<id>\d+)/$', 'modelica.newsletter.views.render'),
+    (r'^newsletter/(?P<id>\d+)/upload$', 'modelica.newsletter.views.upload_fs'),
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
