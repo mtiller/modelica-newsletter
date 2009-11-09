@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.template import Context, loader
 from modelica.newsletter.models import *
-from modelica.newsletter.forms import *
 
 def index(request):
     return HttpResponse("Newsletter index")
