@@ -33,7 +33,13 @@ def render(request, id):
 def email(request, id):
     (newsletter, secs) = _info(id)
     t = loader.get_template('email.html')
-    c = Context({'issue': newsletter, 'secs': secs})
+    c = Context({'issue': newsletter,
+                 'urlroot': 'publications/newsletters',
+                 'bordercolor': 'black',
+                 'titlebg': '#404040',
+                 'headingbg': '#B0B0B0',
+                 'itembg': '#D0D0D0',
+                 'secs': secs})
     return HttpResponse(t.render(c))
 
 def upload_ftp(request, id):

@@ -8,8 +8,8 @@ is available at:
 
 <blockquote>
 <p style="font-size: 8pt; font-family: Verdana,Arial,sans-serif;">
-<a href="http://www.modelica.org/publications/newsletters/{{issue.year}}-{{issue.number}}" target=
-"_blank">www.modelica.org/publications/newsletters/{{issue.year}}-{{issue.number}}</a>
+<a href="http://www.modelica.org/{{urlroot}}/{{issue.year}}-{{issue.number}}" target=
+"_blank">www.modelica.org/{{urlroot}}/{{issue.year}}-{{issue.number}}</a>
 </p>
 </blockquote>
 
@@ -18,10 +18,10 @@ The following table summarizes the topics:
 </p>
 
 
-<table style="border: 1px solid green; font-size: 8pt; font-family: Verdana,Arial,sans-serif; border-collapse: collapse; background-color: rgb(235, 255, 235);" cellpadding="4" cellspacing="0" width="700">
+<table style="border: 1px solid {{bordercolor}}; font-size: 8pt; font-family: Verdana,Arial,sans-serif; border-collapse: collapse; background-color: {{itembg}};" cellpadding="4" cellspacing="0" width="700">
   <tbody>
-    <tr style="color: rgb(255, 255, 255); background-color: green;">
-      <td colspan="3">
+    <tr style="color: white; background-color: {{titlebg}};">
+      <td colspan="{{secs|length}}">
 	<span style="font-size: 13.5pt; font-weight: bold;">
 	  Modelica <span>Newsletter</span> <span>{{issue.year}}</span>-<span>{{issue.number}}</span>
 	</span>
@@ -32,49 +32,22 @@ The following table summarizes the topics:
       </td>
     </tr>
 
-    <tr style="background-color: rgb(220, 220, 220); font-weight: bold;" align="center">
-      <td style="border: 1px solid green;"> News from
-         the Modelica Association</td>
-      <td style="border: 1px solid green;"> News from
-         Modelica library developers</td>
-      <td style="border: 1px solid green;"> News from
-         Modelica tool vendors</td>
+    <tr style="background-color: {{headingbg}}; font-weight: bold;" align="center">
+      {% for sec in secs %}
+      <td style="border: 1px solid {{bordercolor}};">{{sec.obj.title}}</td>
+      {% endfor %}
     </tr>
 
     <tr>
-      <td style="border: 1px solid green;"> Letter from the Board</td>
-      <td style="border: 1px solid green;"> Modelica Libraries distributed by BAUSCH-GALL</td>
-      <td style="border: 1px solid green;"> Modelica in CATIA Systems</td>
-    </tr>
-
-    <tr>
-      <td style="border: 1px solid green;"> Modelica Specification 3.1 released</td>
-      <td style="border: 1px solid green;"> FlexBody Library from Claytex Services</td>
-      <td style="border: 1px solid green;"> deltatheta and the Modelica SDK</td>
-    </tr>
-
-    <tr>
-      <td style="border: 1px solid green;"> 7th International Modelica Conference</td>
-      <td style="border: 1px solid green;"> VehicleDynamics with active safety and hybrid cars</td>
-      <td style="border: 1px solid green;"> Dymola versions 7.2 and 7.3</td>
-    </tr>
-
-    <tr>
-      <td style="border: 1px solid green;"> 3rd International Workshop EOOLT&#39;2009</td>
-      <td style="border: 1px solid green;"> <br></td>
-      <td style="border: 1px solid green;"> SimulationX 3.2 with full Modelica support</td>
-    </tr>
-
-    <tr>
-      <td style="border: 1px solid green;"> Education Workshop + Modelica Teaching Material</td>
-      <td style="border: 1px solid green;"> <br></td>
-      <td style="border: 1px solid green;"> Modelon in Germany (Engineering and Dymola VAR) <br></td>
-    </tr>
-
-    <tr>
-      <td style="border: 1px solid green;"> Modelica License 2</td>
-      <td style="border: 1px solid green;"> <br></td>
-      <td style="border: 1px solid green;"><br> <span></span> </td>
+      {% for sec in secs %}
+      <td valign="top" style="border: 1px solid {{bordercolor}}; background-color: {{itembg}};">
+	<ul>
+	  {% for item in sec.items %}
+	  <li style="list-style-image: url(http://www.modelica.org/site_icon.gif)"><a href="http://www.modelica.org/{{urlroot}}/{{issue.year}}-{{issue.number}}#item{{item.id}}">{{item.title}}</a>&nbsp;</li>
+	  {% endfor %}
+	</ul>
+      </td>
+      {% endfor %}
     </tr>
   </tbody>
 </table>
