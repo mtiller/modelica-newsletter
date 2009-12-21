@@ -38,7 +38,7 @@ def email(request, id):
                  'bordercolor': 'black',
                  'titlebg': '#404040',
                  'headingbg': '#B0B0B0',
-                 'itembg': '#D0D0D0',
+                 'itembg': '#E8E8E8',
                  'secs': secs})
     return HttpResponse(t.render(c))
 

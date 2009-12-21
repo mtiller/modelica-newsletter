@@ -41,9 +41,15 @@ The following table summarizes the topics:
     <tr>
       {% for sec in secs %}
       <td valign="top" style="border: 1px solid {{bordercolor}}; background-color: {{itembg}};">
-	<ul>
+	<ul style="padding-left: 20px">
 	  {% for item in sec.items %}
-	  <li style="list-style-image: url(http://www.modelica.org/site_icon.gif)"><a href="http://www.modelica.org/{{urlroot}}/{{issue.year}}-{{issue.number}}#item{{item.id}}">{{item.title}}</a>&nbsp;</li>
+	  <font color="red">
+	    <li style="margin-left:0px; list-style: disc">
+	      <a style="color: black" href="http://www.modelica.org/{{urlroot}}/{{issue.year}}-{{issue.number}}#item{{item.id}}">
+		{{item.title}}
+	      </a>&nbsp;
+	    </li>
+	  </font>
 	  {% endfor %}
 	</ul>
       </td>
