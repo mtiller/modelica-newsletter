@@ -30,6 +30,12 @@ def render(request, id):
     c = Context({'issue': newsletter, 'secs': secs})
     return HttpResponse(t.render(c))
 
+def email(request, id):
+    (newsletter, secs) = _info(id)
+    t = loader.get_template('email.html')
+    c = Context({'issue': newsletter, 'secs': secs})
+    return HttpResponse(t.render(c))
+
 def upload_ftp(request, id):
     from ftplib import FTP
     if request.method == 'POST':
