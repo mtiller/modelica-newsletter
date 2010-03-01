@@ -36,7 +36,7 @@ def email(request, id):
     c = Context({'issue': newsletter,
                  'urlroot': 'publications/newsletters',
                  'bordercolor': 'black',
-                 'titlebg': '#404040',
+                 'titlebg': '#c9141a',
                  'headingbg': '#B0B0B0',
                  'itembg': '#E8E8E8',
                  'secs': secs})
